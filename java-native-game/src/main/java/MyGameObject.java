@@ -12,6 +12,6 @@ public class MyGameObject implements GameObject {
 
     @Inject
     public MyGameObject(Attribute<String> name) {
-        this.name = name.key("name").asValue();
+        this.name = name.gameObject(hashCode()).key("name").asValue();
     }
 }

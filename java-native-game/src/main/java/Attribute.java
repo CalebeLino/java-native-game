@@ -12,6 +12,12 @@ public class Attribute<T> {
     }
 
     public Attribute<T> key(String key) {
+        this.key = key;
+        return this;
+    }
+
+    public Attribute<T> gameObject(int hashCode) {
+        this.gameObject = hashCode;
         return this;
     }
 }

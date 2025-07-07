@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class AttributeModule {
     @Provides
     @IntoSet
-    Attribute<String> getStringAttribute(GameObject gameObject) {
-        return new Attribute<>(gameObject.hashCode(), "", "");
+    Attribute<String> getStringAttribute() {
+        return new Attribute<>(0, "", "");
     }
 }
