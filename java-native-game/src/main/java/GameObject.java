@@ -1,11 +1,14 @@
-import jakarta.inject.Inject;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
-public class GameObject {
-    String name;
-    MyScript myScript;
-
-    @Inject
-    public GameObject(MyScript myScript) {
-        this.myScript = myScript;
+public abstract class GameObject {
+    List<Attribute> attributes = new LinkedList<>();
+    <T> T publishAttribute(String key, T value) {
+        attributes.add(new Attribute<>(hashCode(), key, value));
+        return value;
+    }
+    public List<Attribute> getAttributes() {
+        return attributes;
     }
 }

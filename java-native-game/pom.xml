@@ -32,6 +32,8 @@
               <version>2.56.2</version>
             </path>
           </annotationProcessorPaths>
+          <source>9</source>
+          <target>9</target>
         </configuration>
       </plugin>
     </plugins>
