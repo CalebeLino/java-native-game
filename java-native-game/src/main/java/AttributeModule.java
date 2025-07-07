@@ -1,15 +1,16 @@
 import dagger.Module;
 import dagger.Provides;
+import dagger.multibindings.IntoSet;
 
+import javax.inject.Inject;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Module
 public class AttributeModule {
     @Provides
-    Set<Attribute> getAttributes(Set<GameObject> gameObjects) {
-        return gameObjects.stream()
-                .flatMap(gobj -> gobj.getAttributes().stream())
-                .collect(Collectors.toSet());
+    @IntoSet
+    Attribute<String> getStringAttribute(GameObject gameObject) {
+        return new Attribute<>(gameObject.hashCode(), "", "");
     }
 }

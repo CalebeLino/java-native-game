@@ -6,13 +6,12 @@ import jakarta.inject.Inject;
 
 import java.util.Map;
 
-@Module
-public class MyGameObject extends GameObject {
+public class MyGameObject implements GameObject {
     String name;
     MyScript myScript;
 
     @Inject
-    public MyGameObject() {
-        name = publishAttribute("name", "");
+    public MyGameObject(Attribute<String> name) {
+        this.name = name.key("name").asValue();
     }
 }

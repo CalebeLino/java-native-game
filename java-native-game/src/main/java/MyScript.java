@@ -1,16 +1,12 @@
 import dagger.Subcomponent;
 import jakarta.inject.Inject;
 
+import java.util.Set;
+
 public class MyScript implements Script {
-    public static class MyUpdate implements Update {
-        String name;
-        @Inject
-        public MyUpdate(String name) {
-            this.name = name;
-        }
-        @Override
-        public void execute() {
-            System.out.println("hello " + name);
-        }
+    String name;
+    @Inject
+    public MyScript(Attribute<String> name) {
+        this.name = name.key("name").asValue();
     }
 }

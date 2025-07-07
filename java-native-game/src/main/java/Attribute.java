@@ -10,4 +10,8 @@ public class Attribute<T> {
     T asValue() {
         return value;
     }
+
+    public Attribute<T> key(String key) {
+        return this;
+    }
 }
