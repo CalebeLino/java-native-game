@@ -7,17 +7,4 @@ public class Attribute<T> {
         this.key = key;
         this.value = value;
     }
-    T asValue() {
-        return value;
-    }
-
-    public Attribute<T> key(String key) {
-        this.key = key;
-        return this;
-    }
-
-    public Attribute<T> gameObject(int hashCode) {
-        this.gameObject = hashCode;
-        return this;
-    }
 }

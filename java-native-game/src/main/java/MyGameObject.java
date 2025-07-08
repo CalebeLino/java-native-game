@@ -6,12 +6,13 @@ import jakarta.inject.Inject;
 
 import java.util.Map;
 
-public class MyGameObject implements GameObject {
+public class MyGameObject extends GameObject {
     String name;
     MyScript myScript;
 
     @Inject
-    public MyGameObject(Attribute<String> name) {
-        this.name = name.gameObject(hashCode()).key("name").asValue();
+    public MyGameObject(MyScript myScript) {
+        name = gameAttribute("name", "");
+        myScript = gameScript(myScript); // doesn't need to assign, but it looks better that way idk
     }
 }

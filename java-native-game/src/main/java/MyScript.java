@@ -3,10 +3,21 @@ import jakarta.inject.Inject;
 
 import java.util.Set;
 
-public class MyScript implements Script {
-    String name;
+public class MyScript extends Script {
     @Inject
-    public MyScript(Attribute<String> name) {
-        this.name = name.key("name").asValue();
+    public MyScript() {
+    }
+
+    @Override
+    Script.Update update() {
+        return new Script.Update() {
+            {
+                name = gameAttribute("name", "");
+            }
+            String name;
+            public void execute() {
+                System.out.println("Hello " + name);
+            }
+        };
     }
 }

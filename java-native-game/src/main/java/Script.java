@@ -3,5 +3,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public interface Script {
+public abstract class Script extends AttributeHolder {
+    Update update;
+    Update update() {
+        return update;
+    }
+    void activate() {
+        update = update();
+    }
+
+    public interface Update {
+        void execute();
+    }
+
+    public Update getUpdate() {
+        return update;
+    }
 }
