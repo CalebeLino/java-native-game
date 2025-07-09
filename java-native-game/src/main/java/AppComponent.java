@@ -6,4 +6,5 @@ import dagger.Component;
         AttributesSharer.class
 })
 public interface AppComponent {
+    CycleManager cycleManager();
 }

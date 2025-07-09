@@ -20,6 +20,10 @@ public class CycleManager {
     }
 
     public void performUpdate() {
-
+        if(sharedAttributes == null) {
+            return;
+        }
+        scripts.stream().map(Script::getUpdate)
+                .forEach(Script.Update::execute);
     }
 }
