@@ -1,15 +1,21 @@
 import dagger.Module;
 import dagger.Provides;
+import jakarta.inject.Inject;
 
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Module
-public class SharedAttributesModule {
-    @Provides
-    public Map<Script, Set<Map.Entry<GameObject, Set<Attribute<String>>>>> sharedAttributes(Set<GameObject> gameObjectSet) {
+public class AttributesSharer {
+    Set<GameObject> gameObjectSet;
+
+    @Inject
+    public AttributesSharer(Set<GameObject> gameObjectSet) {
+        this.gameObjectSet = gameObjectSet;
+    }
+
+    public Map<Script, Set<Map.Entry<GameObject, Set<Attribute<String>>>>> sharedAttributes() {
         return gameObjectSet.stream().flatMap(gobj ->
             gobj.getScripts()
                     .stream().map(script ->

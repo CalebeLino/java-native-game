@@ -3,7 +3,7 @@ import dagger.Component;
 @Component(modules = {
         GameObjectModule.class,
         ScriptModule.class,
-        SharedAttributesModule.class
+        AttributesSharer.class
 })
 public interface AppComponent {
 }
