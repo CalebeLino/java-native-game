@@ -1,9 +1,13 @@
+package com.calebe.engine.modules;
+
+import com.calebe.MyGameObject;
+import com.calebe.engine.game.GameObject;
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoSet;
 
 @Module
-abstract class GameObjectModule {
+public abstract class GameObjectModule {
     @Binds
     @IntoSet
     abstract GameObject myGameObject(MyGameObject myGameObject);

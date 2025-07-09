@@ -1,3 +1,7 @@
+package com.calebe;
+
+import com.calebe.engine.game.Attribute;
+import com.calebe.engine.game.Script;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
@@ -10,7 +14,7 @@ public class MyScript extends Script {
     }
 
     @Override
-    Supplier<Update> update() {
+    public Supplier<Update> update() {
         return () -> new Script.Update() {
             {
                 name = gameAttribute("name", "");

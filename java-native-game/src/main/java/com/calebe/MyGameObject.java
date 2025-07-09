@@ -1,10 +1,8 @@
-import dagger.Module;
-import dagger.Provides;
-import dagger.multibindings.IntoMap;
-import dagger.multibindings.StringKey;
-import jakarta.inject.Inject;
+package com.calebe;
 
-import java.util.Map;
+import com.calebe.engine.game.Attribute;
+import com.calebe.engine.game.GameObject;
+import jakarta.inject.Inject;
 
 public class MyGameObject extends GameObject {
     Attribute<String> name;

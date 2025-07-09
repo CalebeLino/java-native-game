@@ -1,8 +1,10 @@
+package com.calebe.engine.game;
+
 import java.util.*;
 
 public abstract class GameObject extends AttributeHolder {
     Set<Script> scripts = new HashSet<>();
-    <T extends Script> T gameScript(T script) {
+    protected <T extends Script> T gameScript(T script) {
         scripts.add(script);
         return script;
     }

@@ -1,5 +1,8 @@
-import dagger.Module;
-import dagger.Provides;
+package com.calebe.engine;
+
+import com.calebe.engine.game.Attribute;
+import com.calebe.engine.game.GameObject;
+import com.calebe.engine.game.Script;
 import jakarta.inject.Inject;
 
 import java.util.Map;

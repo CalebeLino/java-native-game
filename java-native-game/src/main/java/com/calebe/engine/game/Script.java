@@ -1,11 +1,9 @@
-import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+package com.calebe.engine.game;
+
 import java.util.function.Supplier;
 
 public abstract class Script extends AttributeHolder {
-    abstract Supplier<Update> update();
+    public abstract Supplier<Update> update();
 
     public interface Update {
         void execute();

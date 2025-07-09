@@ -1,3 +1,7 @@
+package com.calebe.engine;
+
+import com.calebe.engine.modules.GameObjectModule;
+import com.calebe.engine.modules.ScriptModule;
 import dagger.Component;
 import jakarta.inject.Singleton;
 
@@ -6,6 +10,6 @@ import jakarta.inject.Singleton;
         GameObjectModule.class,
         ScriptModule.class
 })
-public interface AppComponent {
+public interface EngineComponent {
     CycleManager cycleManager();
 }
