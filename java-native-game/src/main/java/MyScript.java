@@ -1,7 +1,9 @@
 import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 
 import java.util.function.Supplier;
 
+@Singleton
 public class MyScript extends Script {
     @Inject
     public MyScript() {
@@ -15,7 +17,7 @@ public class MyScript extends Script {
             }
             Attribute<String> name;
             public void execute() {
-                System.out.println("Hello " + name);
+                System.out.println("Hello " + name.value);
             }
         };
     }

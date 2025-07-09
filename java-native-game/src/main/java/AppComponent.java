@@ -1,5 +1,7 @@
 import dagger.Component;
+import jakarta.inject.Singleton;
 
+@Singleton
 @Component(modules = {
         GameObjectModule.class,
         ScriptModule.class

@@ -12,7 +12,7 @@ public class MyGameObject extends GameObject {
 
     @Inject
     public MyGameObject(MyScript myScript) {
-        name = gameAttribute("name", "");
+        name = gameAttribute("name", "My GameObject");
         myScript = gameScript(myScript); // doesn't need to assign, but it looks better that way idk
     }
 }
