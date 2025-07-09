@@ -1,7 +1,6 @@
-import dagger.Subcomponent;
 import jakarta.inject.Inject;
 
-import java.util.Set;
+import java.util.function.Supplier;
 
 public class MyScript extends Script {
     @Inject
@@ -9,12 +8,12 @@ public class MyScript extends Script {
     }
 
     @Override
-    Script.Update update() {
-        return new Script.Update() {
+    Supplier<Update> update() {
+        return () -> new Script.Update() {
             {
                 name = gameAttribute("name", "");
             }
-            String name;
+            Attribute<String> name;
             public void execute() {
                 System.out.println("Hello " + name);
             }

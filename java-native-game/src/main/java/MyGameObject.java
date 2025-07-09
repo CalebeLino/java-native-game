@@ -7,7 +7,7 @@ import jakarta.inject.Inject;
 import java.util.Map;
 
 public class MyGameObject extends GameObject {
-    String name;
+    Attribute<String> name;
     MyScript myScript;
 
     @Inject

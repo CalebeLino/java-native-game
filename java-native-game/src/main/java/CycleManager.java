@@ -15,7 +15,7 @@ public class CycleManager {
     }
 
     public void performActivation() {
-        scripts.forEach(Script::activate);
+        scripts.forEach(script -> script.update().get());
         sharedAttributes = attributesSharer.sharedAttributes();
     }
 
@@ -23,7 +23,12 @@ public class CycleManager {
         if(sharedAttributes == null) {
             return;
         }
-        scripts.stream().map(Script::getUpdate)
-                .forEach(Script.Update::execute);
+        scripts.forEach(script -> {
+            sharedAttributes.get(script)
+                    .forEach(gobjAttr -> {
+                        script.setAttributes(gobjAttr.getValue());
+                        script.update().get().execute();
+                    });
+        });
     }
 }
