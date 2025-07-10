@@ -8,6 +8,7 @@ import jakarta.inject.Inject;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class AttributesSharer {
@@ -18,7 +19,7 @@ public class AttributesSharer {
         this.gameObjectSet = gameObjectSet;
     }
 
-    public Map<Script, Set<Map.Entry<GameObject, Set<Attribute<String>>>>> sharedAttributes() {
+    public Map<Script, Set<Map.Entry<GameObject, Map<String, Attribute<String>>>>> sharedAttributes() {
         return gameObjectSet.stream().flatMap(gobj ->
             gobj.getScripts()
                     .stream().map(script ->
@@ -31,7 +32,7 @@ public class AttributesSharer {
                                             .stream()
                                             .filter(gattr -> Objects.equals(gattr.key, sattr.key))
                                             .findFirst().orElseThrow())
-                                .collect(Collectors.toSet())
+                                .collect(Collectors.toMap(attr -> attr.key, Function.identity()))
                         )))
         ).collect(Collectors.groupingBy(
                 Map.Entry::getKey,

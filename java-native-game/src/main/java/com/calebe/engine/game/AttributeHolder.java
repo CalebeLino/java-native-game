@@ -22,7 +22,7 @@ public abstract class AttributeHolder {
         return new HashSet<>(attributes.values());
     }
 
-    public void setAttributes(Set<Attribute<String>> attributes) {
-        this.attributes = attributes.stream().collect(Collectors.toMap(attr -> attr.key, Function.identity()));
+    public void setAttributes(Map<String, Attribute<String>> attributes) {
+        this.attributes = attributes;
     }
 }
