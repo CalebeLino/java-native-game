@@ -1,8 +1,14 @@
 package com.calebe.engine;
 
+import dagger.BindsInstance;
 import dagger.Component;
 
 @Component(modules = {TestEngineModule.class})
-interface TestEngineComponent {
+public interface TestEngineComponent {
     CycleManager cycleManager();
+
+    @Component.Factory
+    interface TestEngineComponentFactory {
+        TestEngineComponent create(@BindsInstance TestEngineContext testEngineContext);
+    }
 }

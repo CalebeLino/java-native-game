@@ -1,15 +1,20 @@
 package com.calebe.engine;
 
 import com.calebe.engine.game.GameObject;
+import com.calebe.engine.game.Script;
 import dagger.Module;
 import dagger.Provides;
 
 import java.util.Set;
 
 @Module
-public abstract class TestEngineModule {
+public class TestEngineModule {
     @Provides
-    Set<GameObject> provideGameObjects(TestEngineContext testEngineContext) {
+    public Set<GameObject> provideGameObjects(TestEngineContext testEngineContext) {
         return testEngineContext.gameObjects();
+    }
+    @Provides
+    public Set<Script> provideScripts(TestEngineContext testEngineContext) {
+        return testEngineContext.scripts();
     }
 }
