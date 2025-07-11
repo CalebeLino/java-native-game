@@ -1,3 +1,14 @@
+## [0.1.1-PREVIEW] - 2025-07-10
+
+### Added
+
+- Prototype for engine testing infrastructure;
+- First test for CycleManager class.
+
+### Changed
+
+- Map of shared attributes now keeps attributes in a String-Instance Map, such as the AttributeHolder class, so there is no conversion overhead.
+
 ## [0.1.0-PREVIEW] - 2025-07-09
 
 ### Added

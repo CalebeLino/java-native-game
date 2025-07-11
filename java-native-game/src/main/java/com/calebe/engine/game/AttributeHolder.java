@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public abstract class AttributeHolder {
     Map<String, Attribute<String>> attributes = new HashMap<>();
-    protected Attribute<String> gameAttribute(String key, String initialValue) {
+    public Attribute<String> gameAttribute(String key, String initialValue) {
         if(attributes.containsKey(key)) {
             return attributes.get(key);
         }
@@ -22,7 +22,7 @@ public abstract class AttributeHolder {
         return new HashSet<>(attributes.values());
     }
 
-    public void setAttributes(Set<Attribute<String>> attributes) {
-        this.attributes = attributes.stream().collect(Collectors.toMap(attr -> attr.key, Function.identity()));
+    public void setAttributes(Map<String, Attribute<String>> attributes) {
+        this.attributes = attributes;
     }
 }

@@ -7,7 +7,7 @@
     PREVIEW: PRE-DEV VERSION;
     SNAPSHOT: PRE-PROD VERSION;
   -->
-  <version>0.1.0-PREVIEW</version>
+  <version>0.1.1-PREVIEW</version>
 
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -20,8 +20,20 @@
       <artifactId>dagger</artifactId>
       <version>2.56.2</version>
     </dependency>
+    <!-- TEST -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>5.18.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
@@ -36,8 +48,8 @@
               <version>2.56.2</version>
             </path>
           </annotationProcessorPaths>
-          <source>10</source>
-          <target>10</target>
+          <source>16</source>
+          <target>16</target>
         </configuration>
       </plugin>
     </plugins>
