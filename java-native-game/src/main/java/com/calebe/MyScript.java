@@ -18,10 +18,12 @@ public class MyScript extends Script {
         return () -> new Script.Update() {
             {
                 name = gameAttribute("name", "");
+                health = gameAttribute("health", 0);
             }
             Attribute<String> name;
+            Attribute<Integer> health;
             public void execute() {
-                System.out.println("Hello " + name.value);
+                System.out.println("Hello " + name.value + ", your health is " + health.value);
             }
         };
     }
