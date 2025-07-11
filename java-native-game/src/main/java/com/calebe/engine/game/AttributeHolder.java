@@ -16,7 +16,7 @@ public abstract class AttributeHolder {
         return (Attribute<T>) attr;
     }
 
-    public Set<Attribute<String>> getAttributes() {
+    public Set<Attribute<?>> getAttributes() {
         return new HashSet<>(attributes.values());
     }
 
