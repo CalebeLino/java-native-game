@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class CycleManager {
     AttributesSharer attributesSharer;
-    Map<Script, Set<Map.Entry<GameObject, Map<String, Attribute<String>>>>> sharedAttributes;
+    Map<Script, Set<Map.Entry<GameObject, Map<String, Attribute<?>>>>> sharedAttributes;
     Set<Script> scripts;
 
     @Inject

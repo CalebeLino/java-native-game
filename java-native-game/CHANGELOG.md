@@ -1,3 +1,12 @@
+## [0.2.0-PREVIEW] - 2025-07-11
+
+### Added
+
+- Support for generic game Attribute<T> publishing and recover;
+- AttributeSharer helper methods for better code reading;
+- AttributeNotFoundException as a hint to which attribute was laking when the sharing occurred;
+- Tests for AttributeSharer.
+
 ## [0.1.1-PREVIEW] - 2025-07-10
 
 ### Added

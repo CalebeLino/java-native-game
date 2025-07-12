@@ -7,7 +7,7 @@
     PREVIEW: PRE-DEV VERSION;
     SNAPSHOT: PRE-PROD VERSION;
   -->
-  <version>0.1.1-PREVIEW</version>
+  <version>0.2.0-PREVIEW</version>
 
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -37,6 +37,14 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <mainClass>com.calebe.Main</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.6.1</version>
@@ -51,6 +59,11 @@
           <source>16</source>
           <target>16</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.1</version>
       </plugin>
     </plugins>
   </build>
