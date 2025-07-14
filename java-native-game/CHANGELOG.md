@@ -1,3 +1,14 @@
+## [0.2.1-PREVIEW] - 2025-07-13
+
+### Added
+
+- Gradle build setup.
+
+### Deleted
+
+- Maven pom.xml;
+- Bye maven, I guess...
+
 ## [0.2.0-PREVIEW] - 2025-07-11
 
 ### Added
