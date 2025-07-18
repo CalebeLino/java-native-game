@@ -8,12 +8,17 @@ plugins {
     `java-library`
     `maven-publish`
     application
+    id("org.openjfx.javafxplugin") version "0.1.0"
+    id("com.gluonhq.gluonfx-gradle-plugin") version "1.0.26"
 }
 
 repositories {
     mavenLocal()
     maven {
         url = uri("https://repo.maven.apache.org/maven2/")
+    }
+    maven {
+        url = uri("https://nexus.gluonhq.com/nexus/content/repositories/releases/")
     }
 }
 
